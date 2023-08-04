@@ -1,0 +1,59 @@
+/***cuando el navegador no soporte webp************/
+.no-webp .inicio {
+    /****modermizr nos agregra la clase de webp en la etiqueta del html, esto hira desde el html hasta el header  que tiene la classe inicio y mostrara la imagen************/
+    background-image: url(../../../public/build/img/header.jpg);
+   
+}
+
+/******cuando el navegador soporte webp**************/
+.webp .inicio {
+    background-image: url(../../../public/build/img/header.webp);
+  
+}
+
+.header {
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0;
+
+    &.inicio {
+        background-position: center center;
+        /****centramos la imagne de forma vertical y horizontalmente*******/
+
+        background-size: cover;
+        /*****tomamos todo el espacio disponible***************/
+
+        @include tablet {
+            min-height: 70rem;
+            /********modificamos la altura del header*********/
+
+
+        }
+
+        .contenido-header{
+            
+    @include tablet {
+        min-height: 70rem;
+        /********modificamos la altura del  contenido header para obligarle ir hacia abajo*********/
+
+    }
+        }
+
+    }
+}
+
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    /******alinemos de forma vertical******/
+    justify-content: space-between;
+
+    h1 {
+        text-align: left;
+        color: $blanco;
+        font-weight: $bold;
+        line-height:2;
+        max-width: 60rem;//al aplicar la propiedad max with, obligamo a realizar un salto de linea
+    }
+
+
+}

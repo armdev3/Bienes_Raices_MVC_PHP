@@ -1,0 +1,33 @@
+.testimonial{
+    background-color: $verde;
+    font-size: 2.4rem;
+    padding:2rem ;
+    color:$blanco;
+    border-radius: 2rem;
+
+
+    /*****ponemos las comillas*************/
+    blockquote{
+     padding-left:5rem;
+     position: relative;/***posicionamos la comilla entro del blockqoute********/
+
+     &::before{
+        content:'';
+        background-image: url(../../../public/build/img/comilla.svg);
+        background-repeat: no-repeat;
+        width: 6rem;
+        height: 8rem;
+        display: block;/*****cpn esto ya aparece la comilla**********/
+        position: absolute;/******posicionamos la comilla fija en la zona antes del blockquote***********/
+        /****utilizamo las propiedades del position relative para posicionatr la comilla a la izquierda********/
+        left:-2rem;
+
+     }
+    }
+
+    p{
+        text-align: right;
+        color:$blanco;
+    }
+
+}

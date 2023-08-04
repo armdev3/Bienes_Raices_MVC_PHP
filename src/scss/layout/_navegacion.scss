@@ -1,0 +1,114 @@
+.derecha{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet{
+      align-items:flex-end;    
+    }
+
+    .dark-mode-boton{
+        width: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        filter:invert(100%);//cambiamos el color de la imagene con filter de css, parecido a los filtros de instagram
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        @include tablet{
+            margin-top:0;
+          
+        }
+
+    }
+    
+}
+
+.barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+
+    }
+}
+
+.navegacion {
+    //display: none;//desaparecemos el  el menu de navegacion para dispositivos pequeños y solo se incluira en dispositivos grandes
+    
+    //OTRA PROPIEDAD PARECIDA AL DISPLAY NONE
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .1s ease-in-out,  opacity .5s linear, height .5s linear;
+    height: 0;
+   
+
+    @include tablet {
+
+       
+        display: flex;
+        /****obligamos a que se desplace  horizontalmente**********/
+        align-items: center;
+        /******aliamos el centrado de forma vertical***********/
+        opacity:1;
+        visibility: visible;
+    }
+
+    a {
+        color: $blanco;
+        text-decoration: none;
+        font-size: 2.2rem;
+        display: block;
+        text-align: center;
+
+        @include tablet {
+            margin-right: 2rem;
+            /****separacion entre los enlaces************/
+            font-size: 1.8rem;
+
+            &:last-of-type {
+                margin-right: 0;
+                /***eliminamos el ultimo margin del elemento************/
+            }
+        }
+    }
+}
+
+/*******Menu de haburguesa***********/
+.mobile-menu {
+    @include tablet {
+        display: none;//desaparecemos el menu de haburguesa para dispositivos grandes como un tablet y solo se vera en dispositivos pequeños
+    }
+
+    img{
+        width: 5rem;
+    }
+}
+
+.mostrar{
+
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    // display: flex;
+    // flex-direction: column;
+
+    // @include tablet{
+    //     flex-direction: row;
+    // }
+
+}
+
+a{
+     &:hover{
+        color: $verde;
+    }
+  
+}
